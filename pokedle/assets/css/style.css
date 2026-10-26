@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url('./images/pokeguessr.png'); /* Caminho da minha imagem */
+    background-size: cover;         /* Cobre todo o ecrã mantendo a proporção */
+    background-position: center;    /* Centraliza a imagem */
+    background-repeat: no-repeat;   /* Evita que a imagem se repita */
+    background-attachment: fixed;   /* Mantém o fundo fixo ao fazer scroll */
+    min-height: 100vh;
+}
+
+/* Estilo extra para o cartão principal */
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 480px;
+}
+
+h1 { color: #e3350d; margin-bottom: 0.2rem; }
+p { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+.search-box {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.search-box button {
+    background-color: #e3350d;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-box button:hover { background-color: #f1e210; }
+
+/* Estilo geral da tabela */
+.table {
+    border-collapse: separate;
+    border-spacing: 0 8px; /* Cria um espaço elegante entre as linhas de palpites */
+    background-color: transparent !important;
+}
+
+/* Cabeçalho da tabela estilizado */
+.table thead th {
+    background-color: #1800ad !important;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* Arredondar os cantos do cabeçalho */
+.table thead th:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.table thead th:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Células dos palpites (linhas da tabela) */
+#tabelaPalpites tbody tr {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+#tabelaPalpites tbody td {
+    padding: 14px;
+    vertical-align: middle;
+    border: none;
+    font-weight: 500;
+}
+
+/* Arredondar os cantos de cada linha de palpite */
+#tabelaPalpites tbody td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#tabelaPalpites tbody td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Animação suave ao adicionar um palpite */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+th {
+    font-size: 0.8rem;
+    color: #666;
+    padding-bottom: 8px;
+}
+
+td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Estilo para a caixa de sugestões personalizada */
+#sugestoesBox {
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 2px;
+}
+
+#sugestoesBox .list-group-item {
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    transition: background-color 0.15s ease;
+}
+
+#sugestoesBox .list-group-item:hover {
+    background-color: #f1f3f5;
+    color: #d9534f;
+    font-weight: 500;
+}
+
+/* Créditos flutuantes no canto inferior direito */
+.footer-credit {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #495057;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    pointer-events: none; /* Garante que o texto não interfere com cliques no fundo */
+}
